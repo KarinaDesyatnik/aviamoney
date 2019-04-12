@@ -1,0 +1,128 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.firstcountru {
+		margin: 20px 0;
+		display: block;
+		max-width: 100%;
+	}
+	.secondcountru {
+		margin: 0;
+		display: block;
+		max-width: 100%;
+		margin: 10px 0;
+	}
+	.text {
+		padding-top: 30px;
+		font-size: 16px;
+	
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.head_box{
+		text-align: center;
+	}
+
+	
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+}
+@media only screen and (max-width : 685px){
+	.menu a:hover {
+		border-color: #fff;
+	}
+	.menu ul{
+		display: none;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 150px;
+		text-align: center;
+		z-index: 15;
+		background-color: rgba(65, 170, 225, 1);
+
+
+
+		
+
+
+	}
+	.menu li{
+		display: block;
+		margin-left: 0;
+		
+	}
+	
+	.menu li + li{
+		padding: 0;
+	}
+	.menu a{
+		padding: 8px 0;
+		display: block;
+		color: #fff;
+		font-weight: 400;
+
+		
+		font-size: 16px;
+	}
+	.btn_menu{
+		display: block;
+	}
+	.top_header {
+		height: 50px;
+		line-height: 20px;
+	}
+
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 550px) {
+	
+	}
+@media only screen and (max-width : 550px) {
+	
+	
+	}
+	/* Custom, iPhone Retina */
+	@media only screen and (max-width : 320px) {
+
+	}
+
+
+	/*==========  Mobile First Method  ==========*/
+
+	/* Custom, iPhone Retina */
+	@media only screen and (min-width : 320px) {
+
+	}
+
+	/* Extra Small Devices, Phones */
+	@media only screen and (min-width : 480px) {
+
+	}
+
+	@media only screen and (min-width : 685px) {
+		.menu ul{
+			display: block !important;
+		}
+
+	}
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px) {
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px) {
+
+	}
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px) {
+
+	}

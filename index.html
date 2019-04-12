@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Converter</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/media.css"> -->
+  
+</head>
+<body>
+  <!-- <div id="top">
+    <a href="header">
+     <img src="img/up.jpg" alt="">
+   </a> -->
+ </div>
+ <div class="all">
+ <div class="header"> 
+    <div class="top_header">
+     <div class="container">
+         <div class="logo">
+             <a href="#">
+               <img src="img/logo3.png" alt="" width="120px" height="120px">
+           </a>
+       </div>
+       <nav class="menu" id="menu">
+          <button class="btn_menu">
+             <span class="btn_row"></span>
+             <span class="btn_row"></span>
+             <span class="btn_row"></span>
+         </button>
+         <ul>
+             <!-- <li><a href="#">Главная</a></li> -->
+             <li><a href="#cal">Калькулятор</a></li>
+             <li><a href="#services">О нас</a></li>
+             <li><a href="#team">Контакты</a></li>
+         </ul>
+     </nav>
+ </div>
+</div> 
+</div>
+
+  <section class="conv">
+
+    <div class="phones">
+        <div class="wrapper">
+          <div class="tabs">
+            <div class="container">
+            <span class="tab">Китай</span>
+            <span class="tab">Украина</span>
+          </div>
+          </div>
+
+
+          <div class="tab_content">
+            <div class="tab_item">
+              <div class="converter" id="cal">
+  <div class="container">
+    <div class="firstcountru">
+      <div class="titleCon">
+        <span>юань</span>
+        <img src="img/61.png" alt="">
+        <span>cny</span>
+      </div>
+  <input id="val1" type="number" placeholder="¥" class="rmb"/>
+ </div>
+ 
+  <div class="secondcountru">
+     <div class="titleCon">
+        <span>гривна</span>
+        <img src="img/71.png" alt="">
+        <span>uah</span>
+      </div>
+  <input id="rezultat" type="number" placeholder="₴" class="hrn"/>
+</div>
+</div>
+  </div>
+</div>
+            <div class="tab_item">
+             <div class="converter" id="cal">
+  <div class="container">
+    <div class="firstcountru">
+      <div class="titleCon">
+        <span>гривна</span>
+        <img src="img/71.png" alt="">
+        <span>uah</span>
+      </div>
+  <input id="val3" type="number" placeholder="₴" class="rmb"/>
+ </div>
+ 
+  <div class="secondcountru">
+     <div class="titleCon">
+        <span>юань</span>
+        <img src="img/61.png" alt="">
+        <span>cny</span>
+      </div>
+  <input id="rezultat2" type="number" placeholder="¥" class="hrn"/>
+</div>
+</div>
+  </div>
+</div>
+          </div>
+        </div> 
+      </div>
+     <!--  <corrency>
+        <r030>156</r030>
+        <txt>Юань Женьміньбі</txt>
+        <rate>4.166295</rate>
+        <cc>CNY</cc>
+        <exchangedate>19.03.2018</exchangedate>
+      </corrency> -->
+      <div class="text" id="services">
+            <ul>
+                <li>- ПРОЗРАЧНЫЕ УСЛОВИЯ</li>
+                <li>- ВЫ ВИДИТЕ КОНКРЕТНУЮ СУММУ</li>
+                <li>- БЕЗ СКРЫТЫХ КОМИССИЙ</li>
+            </ul>
+        </div>
+  </section>
+  </div>
+<!-- <section class="text_about" id="services">
+        <div class="container">
+            <ul>
+                <li>- ПРОЗРАЧНЫЕ УСЛОВИЯ</li>
+                <li>- ВЫ ВИДИТЕ КОНКРЕТНУЮ СУММУ</li>
+                <li>- БЕЗ СКРЫТЫХ КОМИССИЙ</li>
+            </ul>
+        </div>
+    </section> -->
+     <section>
+        <div class="qr" id="team">
+            <div class="container">
+                <div class="title-v1">
+                    <h2>Контакты</h2>
+                </div>
+                <ul class="list-unstyled row">
+                    <li class="col-sm-4 hidden-xs md-margin-bottom-30"></li>
+                    <li class="col-sm-4 col-xs-12 md-margin-bottom-30">
+                      <div class="team-img">
+                        <img class="img-responsive" src="img/qr.png" alt="">
+                    </div>                  
+                </li>
+                <li class="col-sm-4 hidden-xs md-margin-bottom-30">
+                </li>                
+            </ul>                
+        </div>
+    </div>
+</section>
+<div class="footer">
+ <p>2018 © AviatrainTickets</p>
+</div>
+
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <!--  <script type="text/javascript" src="js/script.js"></script> -->
+<!-- <script src="js/jquery-3.2.1.min.js"></script>
+ -->
+<!-- <script src="js/main.js"></script> -->
+<script type="text/javascript">
+  
+$(".phones .wrapper .tab").click(function() {
+  $(".phones .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
+  $(".phones .tab_item").hide().eq($(this).index()).fadeIn()
+}).eq(0).addClass("active");
+
+var course = 0;
+   $.ajax({
+      type: 'get',
+      url: 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange',
+      dataType: 'xml',
+      success: function(response) {
+           $(response).find("currency").each(function(i,elem) {
+              if($(elem).find('r030').text() == '156') { 
+                 course = +$(elem).find('rate').text();
+             //    alert(course);
+              }
+        })
+     }
+});
+$('input').on('keyup',function(){
+    var value1, value3, value4;
+    value1 = parseFloat($('#val1').val()).toFixed(2);;
+   // course = 3.8;
+    value3 = parseFloat($('#val3').val()).toFixed(2);;
+   
+    //с гривен в юани
+        if(value3 <= 799){
+            $('#rezultat2').val((value3 / course).toFixed(2));
+        }
+        if(value3 >= 800){
+            $('#rezultat2').val(((value3 - 124) / course).toFixed(2));
+        }
+        if(value3 >= 1600){
+            $('#rezultat2').val(((value3 - 204) / course).toFixed(2));
+        }
+        if(value3 >= 4000){
+      $('#rezultat2').val(((value3 - 292) / course).toFixed(2));
+     }
+     if(value3 >= 12000){
+      $('#rezultat2').val(((value3 - 620) / course).toFixed(2));
+     }
+     if(value3 >= 20000){
+      $('#rezultat2').val(((value3 - 828) / course).toFixed(2));
+     }
+     if(value3 >= 28000){
+      $('#rezultat2').val(((value3 - 828) / course).toFixed(2));
+     }
+     if(value3 >= 40000){
+      $('#rezultat2').val(((value3 - 1848) / course).toFixed(2));
+     }
+     if(value3 >= 48000){
+      $('#rezultat2').val(((value3 - 2660) / course).toFixed(2));
+     }
+     if(value3 >= 60000){
+      $('#rezultat2').val(((value3 - 3072) / course).toFixed(2));
+     }
+     if(value3 >= 72000){
+      $('#rezultat2').val(((value3 - 3480) / course).toFixed(2));
+     }
+     if(value3 >= 80000){
+      $('#rezultat2').val(((value3 - 4000) / course).toFixed(2));
+     }
+     if(value3 >= 120000){
+    $('#rezultat2').val('обмен до 120000');
+    }
+          //с юаней в гривны
+        if(value1 <= 199){
+            $('#rezultat').val((value1 * course).toFixed(2));
+        }
+        if(value1 >= 200){
+            $('#rezultat').val(((value1 - 31) * course).toFixed(2));
+        }
+        if(value1 >= 500){
+            $('#rezultat').val(((value1 - 51) * course).toFixed(2));
+        }
+        if(value1 >= 1000){
+      $('#rezultat').val(((value1 - 73) * course).toFixed(2));
+    }
+    if(value1 >= 3000){
+      $('#rezultat').val(((value1 - 155) * course).toFixed(2));
+    }
+    if(value1 >= 5000){
+      $('#rezultat').val(((value1 - 207) * course).toFixed(2));
+     }
+    if(value1 >= 7000){
+      $('#rezultat').val(((value1 - 361) * course).toFixed(2));
+    }
+    if(value1 >= 10000){
+      $('#rezultat').val(((value1 - 462) * course).toFixed(2));
+     }
+    if(value1 > 12000){
+    $('#rezultat').val(((value1 - 665) * course).toFixed(2));
+    }
+    if(value1 >= 15000){
+    $('#rezultat').val(((value1 - 768) * course).toFixed(2));
+    }
+    if(value1 >= 18000){
+    $('#rezultat').val(((value1 - 870) * course).toFixed(2));
+    }
+    if(value1 > 30000){
+    $('#rezultat').val('обмен до 30000');
+    }
+    });
+
+  
+$(function(){
+
+  $('.btn_menu').click(function(){
+    $('.menu ul').slideToggle();
+  });
+
+  
+
+  
+  $("#menu, #top").on("click","a", function (event) {
+
+        //отменяем стандартную обработку нажатия по ссылке
+
+        event.preventDefault();
+
+
+
+        //забираем идентификатор бока с атрибута href
+
+        var id  = $(this).attr('href'),
+
+
+
+        //узнаем высоту от начала страницы до блока на который ссылается якорь
+
+        top = $(id).offset().top;
+
+
+
+        //анимируем переход на расстояние - top за 1500 мс
+
+        $('body,html').animate({scrollTop: top}, 1500);
+
+    });
+
+
+});
+
+
+
+
+
+</script>
+</body>
+</html>
